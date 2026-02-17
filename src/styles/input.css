@@ -1,0 +1,347 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ams-red: #f72433;
+  --color-ams-yellow: #fef147;
+  --color-ams-dark: #333333;
+  --color-ams-gray: #b1b1b1;
+  --font-sans: "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-heading: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .stroke-1 {
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .stroke-2 {
+    -webkit-text-stroke-width: 2px;
+  }
+
+  .stroke-white {
+    -webkit-text-stroke-color: rgba(255,255,255,0.2);
+  }
+  .stroke-gray-600 {
+     -webkit-text-stroke-color: #4b5563;
+  }
+}
+
+/* Custom Styles */
+body {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, .btn-primary, .btn-secondary, .section-title {
+  font-family: var(--font-heading);
+}
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+/* Chevron Shape for Process Cards
+   Using pseudo-elements to create the connect arrow effect while maintaining borders is tough.
+   We will use clip-path for the shape, but borders are tricky with clip-path.
+   Alternative: Use SVG background or a dedicated "arrow" div.
+
+   Better Approach for "Pixel Perfect" matching the design:
+   The cards have a yellow border.
+   Card 1: Normal rect left, arrow right.
+   Card 2: Arrow indent left, arrow right.
+   Card 3: Arrow indent left, normal rect right.
+*/
+
+@media (min-width: 768px) {
+    .process-card {
+        @apply relative bg-ams-dark border-t border-b border-l border-ams-yellow;
+        margin-right: -30px; /* Overlap amount */
+        padding-right: 60px; /* Space for content before arrow */
+        padding-left: 30px;
+        clip-path: none !important;
+    }
+
+    /* Arrow Tip using Pseudo-element */
+    .process-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -36px; /* Adjust based on angle */
+        width: 72px; /* Size of the square */
+        transform: scale(0.707) rotate(45deg); /* Scale to match height if needed, usually just rotate */
+        /* Actually, simpler math: Height is 100%. easier to position a smaller square centered vertically?
+           No, for full height chevron, we need a square whose diagonal matches the height.
+           The standard way:
+           Top 50%, translate Y -50%.
+        */
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        width:  calc(100% * 1.414); /* Massive smooth coverage? No. */
+        /* Let's use a fixed size sufficient to cover the corner */
+        width: 50px;
+        height: 50px;
+        /* Wait, the arrow is the full height of the card?
+           The design shows a chevron that spans the whole height.
+           Calculating the side of a square that fits a height H when rotated 45deg:
+           Diagonal = H. Side = H / sqrt(2).
+           So width/height should be approx 70.7% of card height.
+           Since card height varies, this is tricky with pixel values.
+
+           Better approach: CSS Clip Path is best for the SHAPE.
+           Borders are the problem.
+
+           Let's use a SVG background image for the border? No.
+           Let's go back to: z-index overlapping with a pseudo element that IS the arrow tip.
+
+           If I make the ::after element large enough (e.g. 200px) and center it,
+           and clip the parent? No.
+
+           Let's stick to the visual approximation for now:
+           A smaller arrow indicator or a fixed size arrow.
+           The design has a FULL HEIGHT arrow.
+
+           Let's try a technique using borders on the ::after element.
+        */
+        height: 100%; /* This won't work well with rotation for full height unless calculated perfectly */
+    }
+
+    /* REVISED STRATEGY:
+       We will use a simple logical approximation that looks good.
+       The "Arrow" will be a square rotated 45deg, attached to the right.
+       We will make it large enough to span the height.
+    */
+    .process-card::after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        right: -3.5rem; /* half of width roughly */
+        width: 7rem;
+        height: 7rem;
+        transform: translateY(-50%) rotate(45deg);
+        background-color: #333333; /* ams-dark */
+        border-top: 1px solid var(--color-ams-yellow);
+        border-right: 1px solid var(--color-ams-yellow);
+    }
+
+    /* Stacking */
+    .process-card:nth-child(1) { z-index: 30; }
+    .process-card:nth-child(2) { z-index: 20; padding-left: 5rem; }
+    .process-card:nth-child(3) { z-index: 10; padding-left: 5rem; }
+
+    /* Hide the right border of the main rect since the arrow provides it?
+       Actually, standard border-right should be none.
+    */
+    .process-card {
+        border-right: none;
+    }
+}
+
+/* Mobile Fallback */
+@media (max-width: 767px) {
+    .process-card {
+        @apply border border-ams-yellow mb-4;
+    }
+    .process-card::after {
+        display: none;
+    }
+}
+
+
+
+.btn-primary {
+  @apply bg-ams-yellow text-black font-bold py-3 px-8 uppercase hover:bg-yellow-400 transition-colors duration-300;
+}
+
+.btn-secondary {
+  @apply bg-ams-red text-white font-bold py-3 px-8 uppercase hover:bg-red-700 transition-colors duration-300;
+}
+
+.section-title {
+  @apply text-4xl font-bold text-center mb-8;
+}
+
+
+
+        /*
+           Robust Chevron Implementation
+           Strategy:
+           - Outer container has the YELLOW background (acts as border).
+           - Inner container has the DARK background (content).
+           - Both have the SAME clip-path shape.
+           - The Inner container is slightly smaller or positioned to reveal 1px of the Outer container.
+        */
+
+        .process-arrow-container {
+            position: relative;
+            height: 100%;
+            /* The yellow "border" color */
+            background-color: #fff200;
+            /* Shape: Flat left, Pointed right */
+            clip-path: polygon(0% 0%,
+                    /* Top Left */
+                    calc(100% - 30px) 0%,
+                    /* Top Right (before arrow) */
+                    100% 50%,
+                    /* Arrow Tip */
+                    calc(100% - 30px) 100%,
+                    /* Bottom Right (before arrow) */
+                    0% 100%
+                    /* Bottom Left */
+                );
+            padding: 1px;
+            /* The border width */
+            /* filter: drop-shadow(0 0 5px rgba(0,0,0,0.5)); Drop shadow doesn't work well on clip-path elements directly in some browsers without messy SVG filters, skipping for now */
+        }
+
+        /* First Card: Flat Left, Arrow Right */
+        .process-arrow-container.step-1 {
+            clip-path: polygon(0% 0%,
+                    calc(100% - 40px) 0%,
+                    100% 50%,
+                    calc(100% - 40px) 100%,
+                    0% 100%);
+            margin-right: -35px;
+            /* Overlap the arrow into the next card's indentation */
+            z-index: 30;
+        }
+
+        /* Middle Card: Indented Left, Arrow Right */
+        .process-arrow-container.step-2 {
+            clip-path: polygon(0% 0%,
+                    /* Top Left (start) */
+                    calc(100% - 40px) 0%,
+                    /* Top Right */
+                    100% 50%,
+                    /* Arrow Tip */
+                    calc(100% - 40px) 100%,
+                    /* Bottom Right */
+                    0% 100%,
+                    /* Bottom Left */
+                    40px 50%
+                    /* Arrow Indent at Left */
+                );
+            margin-right: -35px;
+            padding-left: 1px;
+            /* Ensure border is visible on the varied left edge? Hard with padding.
+                                  For indented left, standard padding works if we clip the child carefully.
+                               */
+            z-index: 20;
+        }
+
+        /* Last Card: Indented Left, Arrow Right (as per design) */
+        .process-arrow-container.step-3 {
+            clip-path: polygon(0% 0%,
+                    calc(100% - 40px) 0%,
+                    100% 50%,
+                    calc(100% - 40px) 100%,
+                    0% 100%,
+                    40px 50%);
+            z-index: 10;
+        }
+
+        .process-arrow-inner {
+            background-color: #333333;
+            /* ams-dark */
+            height: 100%;
+            width: 100%;
+            /* Inner clip path must match outer but slightly retracted?
+               actually if we just make it full size but user padding on outer?
+               Padding on a clipped element distorts.
+
+               Better way:
+               Outer is standard div (yellow).
+               Inner is standard div (dark).
+               Apply clip-path to BOTH, exactly the same.
+               But utilize `mask` or just relying on a slightly smaller inner div?
+
+               The "Padding: 1px" method on outer works for rectangles, but for polygons it effectively scales the content,
+               keeping the center.
+            */
+            clip-path: inherit;
+            /* Inherit the shape from parent! */
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*
+           CORRECTION:
+           `padding: 1px` on a polymer-clipped parent does NOT create a 1px border uniformly.
+           It just shrinks the content box.
+           For a complex shape properly bordered, we need a specific child clip path or
+           SVG background.
+
+           Let's use the SCALING method.
+           Outer container: Yellow. Clipped.
+           Inner container: Dark. Clipped. Positioned absolute layout?
+
+           Let's try a simpler approach used in CSS triangles:
+           Use a generated SVG background? No, hard to dynamic height.
+
+           Let's stick to the overlap with pseudo-elements for the Chevron lines?
+           No, that was the previous failure.
+
+           Let's go with the "Shape Container" method.
+           Outer = Yellow.
+           Inner = Dark.
+
+           To get the border effect, we can use `clip-path` on the WRAPPER (Outer),
+           and then inside place the Inner div which is `calc(100% - 2px)` size and centered?
+           That doesn't work for the arrow tip.
+
+           Wait, there is a trick:
+           Nested grid.
+           Outer: Yellow. Clip-path: Arrow.
+           Inner: Dark. Clip-path: Arrow.
+           Transform: scale(0.99)?
+           No, scale distorts.
+
+           Let's look at the design again. Thin yellow line.
+           Maybe just use SVG.
+
+           I will use a background image for the border lines on the pseudo elements.
+           Actually, the user's design shows outlines.
+
+           Let's go back to the "Standard Rect + Arrow Tip" but this time do it properly.
+
+           Card Body: Border Top, Bottom.
+           Right Arrow: Rotated Square with Border Top, Right.
+           Left Indent: THIS is the hard part for "interlocking".
+
+           If we need pixel perfect interlocking:
+           We need the Left side of Card 2 to be cutout.
+           CSS `clip-path` is the only easy way to get the cutout.
+           But `clip-path` kills borders.
+
+           Solution: drop-shadow filter on the parent container forms the border?
+           `filter: drop-shadow(0px 0px 0px 1px #fff200);`
+           This works on the shape created by clip-path!
+           This is the modern way to border a clip-path.
+        */
+
+        .process-card-shape {
+            background-color: #333333;
+            /* Content bg */
+            height: 100%;
+            border: 1px solid #fff200;
+            position: relative;
+        }
+
+        .process-card-wrapper {
+            position: relative;
+            height: 100%;
+            /* Removed overlap and filter */
+        }
+
+        /* Mobile reset */
+        @media (max-width: 767px) {
+            .process-card-wrapper {
+                margin-bottom: 20px;
+            }
+        }

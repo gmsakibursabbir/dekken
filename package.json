@@ -1,0 +1,29 @@
+{
+  "name": "tailwind-v4-yarn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"npm run watch\" \"npm run serve\"",
+    "watch": "tailwindcss -i ./src/styles/input.css -o ./src/css/style.css --watch --minify",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && mkdir -p dist/css",
+    "build:html": "cp src/*.html dist/",
+    "build:css": "tailwindcss -i ./src/styles/input.css -o ./dist/css/style.css --minify",
+    "build:js": "cp -r src/js dist/",
+    "build:images": "cp -r src/images dist/",
+    "build:font": "cp -r src/font dist/",
+    "build": "npm run prebuild && concurrently \"npm run build:html\" \"npm run build:css\" \"npm run build:js\" \"npm run build:images\" \"npm run build:font\"",
+    "serve": "lite-server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "lite-server": "^2.6.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.0"
+  }
+}
