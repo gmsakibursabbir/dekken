@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team - AMS - Asphalt Maintenance Solutions LLC</title>
+  <link href="./css/style.css" rel="stylesheet" />
+  <meta name="description" content="Asphalt Maintenance Solutions LLC - Everything for Roads" />
+  <!-- facicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="manifest" href="./images/site.webmanifest">
+  <!-- Placeholder for Google Fonts if needed, using Helvetica mostly -->
+  <link rel="stylesheet" href="./fonts/fonts-style.css">
+
+
+
+</head>
+
+<body class="bg-[#b1b1b1]">
+
+  <!-- Header -->
+  <header class="bg-[#d8d8d8]/70 lg:py-0 py-2 relative z-50">
+    <div class="container mx-auto lg:h-[120px] px-4 flex justify-between items-stretch">
+      <!-- Logo -->
+      <div class="flex items-center justify-center flex-col">
+        <img src="./images/logo.png" alt="AMS Logo" class="lg:max-w-[250px] max-w-[150px]">
+        <div class="flex flex-col text-center text-[#f01e24] gap-0">
+          <p class="lg:text-xs text-[7px] font-bold uppercase">asphalt maintenance solutions llc</p>
+          <p class="lg:text-lg text-sm font-bold capitalize italic font-serif">"everything for roads"</p>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden lg:flex space-x-6 text-sm h-full font-bold text-ams-dark capitalize">
+        <a href="#" class="hover:text-ams-red flex items-end pb-6 h-full">Home</a>
+        <a href="#" class="hover:text-ams-red flex items-end pb-6 h-full">Who We Are</a>
+        <a href="#" class="hover:text-ams-red flex items-end pb-6 h-full">Why
+          Pavement Preservation?</a>
+        <a href="#" class="hover:text-ams-red flex items-end pb-6 h-full">Products & Services</a>
+        <a href="#" class="hover:text-ams-red flex items-end pb-6 h-full">Careers</a>
+        <a href="#" class="hover:text-ams-red flex items-end pb-6 h-full">Contact Us</a>
+      </nav>
+
+      <!-- Notice Button -->
+      <div class="hidden lg:flex items-stretch">
+        <a href="#"
+          class="bg-[#e5e95b]/80 text-black min-w-[150px] font-bold text-xs uppercase px-4 py-2 h-full text-center rounded-none hover:bg-yellow-400 flex md:items-center md:pb-0 lg:items-end lg:pb-5 justify-center relative overflow-hidden group">
+          <span class="relative z-10 uppercase">Notice of<br>Proposals</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor"
+            class="absolute inset-0 w-full h-full text-[#f6fb48] scale-125 z-0 pointer-events-none group-hover:scale-150 transition-transform duration-500">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden text-gray-700 focus:outline-none flex items-center">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+      <nav class="flex flex-col p-4 space-y-2 capitalize text-sm font-medium">
+        <a href="#" class="hover:text-ams-red">Home</a>
+        <a href="#" class="hover:text-ams-red">Who We Are</a>
+        <a href="#" class="text-ams-red font-bold">Why Pavement Preservation?</a>
+        <a href="#" class="hover:text-ams-red">Products & Services</a>
+        <a href="#" class="hover:text-ams-red">Careers</a>
+        <a href="#" class="hover:text-ams-red">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section
+    class="relative lg:h-[700px] md:h-[500px] h-[400px] -mt-[120px] w-full z-10 border-b-[8px] border-ams-red shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+    <!-- Background Image -->
+    <img src="./images/about-hero.jpg" alt="Road Construction" class="absolute inset-0 w-full h-full object-cover">
+
+    <!-- Overlay Content -->
+    <div class="absolute inset-0  flex flex-col items-center justify-center text-center px-4 mt-20">
+      <h1 class="text-white text-5xl md:text-8xl font-normal mb-2 text-shadow">We Are <span
+          class="text-ams-red text-5xl md:text-8xl font-bold text-shadow">Our
+          People</span></h1>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex space-x-4 absolute top-[140px] right-6 z-50">
+      <a href="#" class="group">
+        <div class="w-6 h-6 flex items-center justify-center group-hover:bg-gray-600"><svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(177,177,177,1)">
+            <path
+              d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z">
+            </path>
+          </svg>
+        </div>
+      </a>
+      <a href="#" class="group">
+        <div class="w-6 h-6 flex items-center justify-center group-hover:bg-gray-600"><svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(177,177,177,1)">
+            <path
+              d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z">
+            </path>
+          </svg>
+        </div>
+      </a>
+      <a href="#" class="group">
+        <div class="w-6 h-6 flex items-center justify-center group-hover:bg-gray-600"><svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(177,177,177,1)">
+            <path
+              d="M12.2439 4C12.778 4.00294 14.1143 4.01586 15.5341 4.07273L16.0375 4.09468C17.467 4.16236 18.8953 4.27798 19.6037 4.4755C20.5486 4.74095 21.2913 5.5155 21.5423 6.49732C21.942 8.05641 21.992 11.0994 21.9982 11.8358L21.9991 11.9884L21.9991 11.9991C21.9991 11.9991 21.9991 12.0028 21.9991 12.0099L21.9982 12.1625C21.992 12.8989 21.942 15.9419 21.5423 17.501C21.2878 18.4864 20.5451 19.261 19.6037 19.5228C18.8953 19.7203 17.467 19.8359 16.0375 19.9036L15.5341 19.9255C14.1143 19.9824 12.778 19.9953 12.2439 19.9983L12.0095 19.9991L11.9991 19.9991C11.9991 19.9991 11.9956 19.9991 11.9887 19.9991L11.7545 19.9983C10.6241 19.9921 5.89772 19.941 4.39451 19.5228C3.4496 19.2573 2.70692 18.4828 2.45587 17.501C2.0562 15.9419 2.00624 12.8989 2 12.1625V11.8358C2.00624 11.0994 2.0562 8.05641 2.45587 6.49732C2.7104 5.51186 3.45308 4.73732 4.39451 4.4755C5.89772 4.05723 10.6241 4.00622 11.7545 4H12.2439ZM9.99911 8.49914V15.4991L15.9991 11.9991L9.99911 8.49914Z">
+            </path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- We Are Our Leadership -->
+  <section class="py-14 lg:py-[140px] bg-[#3f3f3f] border-b-[8px] border-ams-red shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-5xl text-white font-normal mb-10 lg:mb-20">We Are <span
+          class="text-ams-yellow font-bold">Our
+          Leadership</span>
+      </h2>
+
+      <div class="flex flex-col md:flex-row justify-center items-center gap-10 max-w-[700px] mx-auto">
+        <!-- Generic product items -->
+        <div class="flex flex-col items-center justify-center gap-5 w-full max-w-[300px] md:max-w-none">
+          <div class="group relative w-full aspect-square md:w-[300px] md:h-[300px] border-[12px] border-ams-yellow">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[12px] bg-[#3f3f3f] -mx-[12px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[12px] bg-[#3f3f3f] -mx-[12px] z-20"></div>
+          </div>
+          <div>
+            <h4 class="text-white text-lg md:text-2xl font-bold">Terry <span
+                class="text-ams-yellow">Asphaltriguez</span></h4>
+            <p class="text-base md:text-xl text-[#b3b3b3] mt-1 mb-4">President & CEO</p>
+            <a href="#" class="py-3 px-4 bg-[#fdf118] text-[#3f3f3f] font-semibold text-base">Read Bio</a>
+          </div>
+        </div>
+        <!-- Generic product items -->
+        <div class="flex flex-col items-center justify-center gap-5 w-full max-w-[300px] md:max-w-none">
+          <div class="group relative w-full aspect-square md:w-[300px] md:h-[300px] border-[12px] border-ams-yellow">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[12px] bg-[#3f3f3f] -mx-[12px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[12px] bg-[#3f3f3f] -mx-[12px] z-20"></div>
+          </div>
+          <div>
+            <h4 class="text-white text-lg md:text-2xl font-bold">Terry <span
+                class="text-ams-yellow">Asphaltriguez</span></h4>
+            <p class="text-base md:text-xl text-[#b3b3b3] mt-1 mb-4">President & CEO</p>
+            <a href="#" class="py-3 px-4 bg-[#fdf118] text-[#3f3f3f] font-semibold text-base">Read Bio</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Product Highlight -->
+  <section class="py-16 bg-gradient-to-b from-[#ececec] to-[#b3b3b3]
+ border-b-[8px] border-[#9f9d99] shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-5xl text-gray-800 font-normal mb-12">We Are <span class="text-ams-red font-bold">Your
+          AMS Team</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[800px] mx-auto">
+        <!-- Generic product items -->
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+        <div class="flex flex-col items-start justify-start gap-5 w-full ">
+          <div class="group relative w-full aspect-square border-[10px] border-[#3f3f3f]">
+            <img src="images/avaters.png" alt="" class="w-full h-full object-cover">
+            <!-- bars -->
+            <div class="absolute top-1/2 -translate-y-1/2 left-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 right-0 h-[60%] w-[10px] bg-[#b3b3b3] -mx-[10px] z-20"></div>
+          </div>
+          <div class="w-full text-start">
+            <h4 class="text-[#000000] text-lg md:text-2xl font-black">First <span class="text-ams-red">Last</span></h4>
+            <p class="text-base md:text-xl text-[#252525] my-1 font-light">Job Title</p>
+            <a href="mailto:email@amsroads.com" class="text-base text-[#3f3f3f] mt-1 font-light">email@amsroads.com</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Forms -->
+  <section class="py-16 lg:py-20 bg-white border-b-[8px] border-[#ec1c24] shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+    <div class="container mx-auto px-4 max-w-5xl text-left">
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-6xl text-[#000000] font-normal leading-tight">Interested in</h2>
+      <h2 class="text-4xl md:text-6xl text-ams-red font-bold leading-tight mb-8">Joining Our Team?</h2>
+
+      <!-- Description -->
+      <p class="text-lg md:text-xl font-normal text-[#000000] mb-12 max-w-4xl">
+        Looking for a treatment recommendation on a particular road? Need more details on one of our processes? Have a
+        network management question? Reach out!
+      </p>
+
+      <!-- Form -->
+      <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+        <!-- Full Name -->
+        <input type="text" placeholder="Full Name"
+          class="w-full h-[48px] bg-white border border-[#ececec] focus:outline-none focus:border-ams-red px-4 text-[#000000] placeholder-[#414141] font-light text-base"
+          style="padding-top: 14px; padding-bottom: 14px; line-height: 1.2;">
+
+        <!-- Phone -->
+        <input type="tel" placeholder="Phone"
+          class="w-full h-[48px] bg-white border border-[#ececec] focus:outline-none focus:border-ams-red px-4 text-[#000000] placeholder-[#414141] font-light text-base"
+          style="padding-top: 14px; padding-bottom: 14px; line-height: 1.2;">
+
+        <!-- Email -->
+        <input type="email" placeholder="Email"
+          class="w-full h-[48px] bg-white border border-[#ececec] focus:outline-none focus:border-ams-red px-4 text-gray-700 placeholder-[#414141] font-light text-base"
+          style="padding-top: 14px; padding-bottom: 14px; line-height: 1.2;">
+
+        <!-- Company -->
+        <input type="text" placeholder="Company/Organization"
+          class="w-full h-[48px] bg-white border border-[#ececec] focus:outline-none focus:border-ams-red px-4 text-[#000000] placeholder-[#414141] font-light text-base"
+          style="padding-top: 14px; padding-bottom: 14px; line-height: 1.2;">
+
+        <!-- Message -->
+        <textarea placeholder="Please type your message here..."
+          class="w-full md:col-span-2 h-40 bg-white border border-[#ececec] p-4 text-gray-700 focus:outline-none focus:border-ams-red placeholder-[#414141] font-light resize-none"></textarea>
+
+      </form>
+
+
+      <!-- Button -->
+      <a href="#"
+        class="bg-ams-red hover:bg-red-700 text-white font-bold text-lg py-3 px-8 inline-flex items-center gap-3 transition duration-300">
+        Apply for Careers
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-[#414141] text-gray-400 pt-12 pb-7 text-xs">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between gap-8">
+      <!-- Col 1 -->
+      <div class="text-center w-full md:w-1/3 lg:pr-[100px]">
+        <div>
+          <img src="./images/logo-text.png" alt="" class="mx-auto md:mx-0 inline-block">
+        </div>
+        <p class="text-ams-red font-bold uppercase mb-4">"Everything For Roads"</p>
+        <p>Office: 1234 Jefferson St, Centreville PA 12345</p>
+        <p>Garage: 7890 Projects Rd, Allentown PA 18100</p>
+        <p class="mt-2">info@amsroads.com</p>
+        <p>(610) 970-1234</p>
+      </div>
+      <div
+        class="w-full md:w-2/3 grid grid-cols-2 lg:grid-cols-4 border-t pt-10 md:pt-0 md:border-t-0 md:border-l border-[#9e9e9e] lg:pl-[100px] gap-10">
+        <!-- Col 2 -->
+        <div>
+          <p class="text-[#b1b1b1] font-bold text-lg pb-3">AMS Products</p>
+          <ul class="space-y-4 md:max-w-[110px]">
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Chip Seal</a>
+            </li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Ultra Thin
+                Bonded Wearing</a></li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Cold Mix
+                Paving</a></li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Micro
+                Surfacing</a></li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Fog Seal</a>
+            </li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Road Sealer</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <p class="text-[#b1b1b1] font-bold text-lg pb-3">Company</p>
+          <ul class="space-y-4 md:max-w-[110px]">
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">About AMS</a>
+            </li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Careers</a></li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Contact Us</a>
+            </li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Newsletter</a>
+            </li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Terms</a></li>
+            <li><a href="#" class="text-white font-normal text-sm hover:text-ams-red transition-colors">Privacy</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div>
+          <p href="#" class="text-[#b1b1b1] font-bold text-lg pb-3 hover:text-ams-red transition-colors">Partners</p>
+        </div>
+        <!-- Col 4 -->
+        <div class="flex flex-col items-center">
+          <p class="text-[#b1b1b1] font-bold text-lg pb-3">Affiliates</p>
+          <!-- Placeholder for partner logo -->
+          <div class="space-y-3 md:max-w-[110px]">
+            <img src="./images/f1.png" alt="">
+            <img src="./images/f2.png" alt="">
+          </div>
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="group">
+              <div class="w-6 h-6 flex items-center justify-center group-hover:bg-gray-600"><svg
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(177,177,177,1)">
+                  <path
+                    d="M10.4883 14.651L15.25 21H22.25L14.3917 10.5223L20.9308 3H18.2808L13.1643 8.88578L8.75 3H1.75L9.26086 13.0145L2.31915 21H4.96917L10.4883 14.651ZM16.25 19L5.75 5H7.75L18.25 19H16.25Z">
+                  </path>
+                </svg>
+              </div>
+            </a>
+            <a href="#" class="group">
+              <div class="w-6 h-6 flex items-center justify-center group-hover:bg-gray-600"><svg
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(177,177,177,1)">
+                  <path
+                    d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z">
+                  </path>
+                </svg>
+              </div>
+            </a>
+            <a href="#" class="group">
+              <div class="w-6 h-6 flex items-center justify-center group-hover:bg-gray-600"><svg
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(177,177,177,1)">
+                  <path
+                    d="M12.2439 4C12.778 4.00294 14.1143 4.01586 15.5341 4.07273L16.0375 4.09468C17.467 4.16236 18.8953 4.27798 19.6037 4.4755C20.5486 4.74095 21.2913 5.5155 21.5423 6.49732C21.942 8.05641 21.992 11.0994 21.9982 11.8358L21.9991 11.9884L21.9991 11.9991C21.9991 11.9991 21.9991 12.0028 21.9991 12.0099L21.9982 12.1625C21.992 12.8989 21.942 15.9419 21.5423 17.501C21.2878 18.4864 20.5451 19.261 19.6037 19.5228C18.8953 19.7203 17.467 19.8359 16.0375 19.9036L15.5341 19.9255C14.1143 19.9824 12.778 19.9953 12.2439 19.9983L12.0095 19.9991L11.9991 19.9991C11.9991 19.9991 11.9956 19.9991 11.9887 19.9991L11.7545 19.9983C10.6241 19.9921 5.89772 19.941 4.39451 19.5228C3.4496 19.2573 2.70692 18.4828 2.45587 17.501C2.0562 15.9419 2.00624 12.8989 2 12.1625V11.8358C2.00624 11.0994 2.0562 8.05641 2.45587 6.49732C2.7104 5.51186 3.45308 4.73732 4.39451 4.4755C5.89772 4.05723 10.6241 4.00622 11.7545 4H12.2439ZM9.99911 8.49914V15.4991L15.9991 11.9991L9.99911 8.49914Z">
+                  </path>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center text-sm md:mt-10 lg:mt-20 text-[#ababab]">
+      &copy; Copyright 2026 Asphalt Maintenance Solutions LLC
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+  <script>
+    // Simple Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+
+</html>
