@@ -489,6 +489,15 @@
     </div>
   </footer>
 
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn"
+    class="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 w-8 h-8 lg:w-10 lg:h-10 bg-ams-red text-white flex items-center justify-center rounded-sm opacity-0 invisible transition-all duration-300 z-50 hover:bg-red-700 shadow-lg cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+      class="w-4 h-4 lg:w-5 lg:h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
   <script src="./js/script.js"></script>
   <script>
     // Simple Mobile Menu Toggle
@@ -496,7 +505,10 @@
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
 
-    // Mobile Header Scroll Background
+    // Scroll to Top Button Logic
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    // Mobile Header Scroll Background & Scroll to Top Visibility
     window.addEventListener('scroll', function () {
       const header = document.querySelector('header');
       if (window.innerWidth < 1024) { // lg breakpoint
@@ -511,6 +523,19 @@
         header.classList.remove('bg-[#b1b1b1]', 'shadow-md');
         header.classList.add('bg-[#d8d8d8]/70');
       }
+
+      // Scroll to Top Button
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+        scrollToTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollToTopBtn.classList.add('opacity-0', 'invisible');
+        scrollToTopBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
