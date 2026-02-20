@@ -20,7 +20,7 @@
 <body class="bg-[#b1b1b1]">
 
   <!-- Header -->
-  <header class="bg-gradient-to-b from-[#81888f] to-transparent lg:py-0 py-2">
+  <header class="bg-gradient-to-b from-[#81888f] to-transparent lg:py-0 py-2 sticky top-0 z-50 lg:static">
     <div class="container mx-auto lg:h-[120px] px-4 flex justify-between items-stretch">
       <!-- Logo -->
       <div class="flex items-center justify-center flex-col">
@@ -65,7 +65,8 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+    <div id="mobile-menu"
+      class="hidden lg:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-200">
       <nav class="flex flex-col p-4 space-y-2 capitalize text-sm font-medium">
         <a href="#" class="hover:text-ams-red">Home</a>
         <a href="#" class="hover:text-ams-red">Who We Are</a>
@@ -393,7 +394,7 @@
     class="bg-white py-16 md:py-44 overflow-hidden border-b-[8px] border-[#ec1c24] shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
 
     <!-- Row 1: Full-width image LEFT + text RIGHT -->
-    <div class="relative flex flex-col md:block mb-24">
+    <div class="relative flex flex-col md:block md:mb-24">
       <!-- Image: bleeds from left edge, diagonal clip on right -->
       <div class="w-full md:w-[45vw] h-[300px] md:h-full md:absolute md:left-0 md:top-0 md:bottom-0 shrink-0 z-0">
         <img src="images/hero-bg.png" alt="AMS Equipment"
@@ -421,7 +422,7 @@
     </div>
 
     <!-- Row 2: Full-width paragraph -->
-    <div class="container mx-auto px-4 my-16 md:my-24 relative flex justify-center">
+    <div class="container mx-auto px-4 md:my-24 relative flex justify-center">
       <!-- Decorative diagonal shape -->
       <div
         class="hidden md:block absolute right-0 top-0 h-full w-[200px] pointer-events-none md:[clip-path:polygon(30%_0,100%_0,70%_100%,0%_100%)] opacity-50 bg-[#e8e8e8]">
@@ -650,7 +651,7 @@
       <!-- Col 1 -->
       <div class="text-center w-full md:w-1/3 lg:pr-[100px]">
         <div>
-          <img src="./images/logo-text.png" alt="" class="mx-auto md:mx-0 inline-block">
+          <img src="./images/logo-text.png" alt="" class="mx-auto md:mx-0 inline-block max-w-[300px] md:max-w-full">
         </div>
         <p class="text-ams-red font-bold uppercase mb-4">"Everything For Roads"</p>
         <p>Office: 1234 Jefferson St, Centreville PA 12345</p>
@@ -699,10 +700,10 @@
           <p href="#" class="text-[#b1b1b1] font-bold text-lg pb-3 hover:text-ams-red transition-colors">Partners</p>
         </div>
         <!-- Col 4 -->
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center col-span-2 lg:col-span-1">
           <p class="text-[#b1b1b1] font-bold text-lg pb-3">Affiliates</p>
           <!-- Placeholder for partner logo -->
-          <div class="space-y-3 md:max-w-[110px]">
+          <div class="space-y-3 max-w-[110px]">
             <img src="./images/f1.png" alt="">
             <img src="./images/f2.png" alt="">
           </div>
@@ -739,7 +740,7 @@
       </div>
 
     </div>
-    <div class="text-center text-sm md:mt-10 lg:mt-20 text-[#ababab]">
+    <div class="text-center text-sm mt-14 lg:mt-20 text-[#ababab]">
       &copy; Copyright 2026 Asphalt Maintenance Solutions LLC
     </div>
   </footer>
@@ -774,6 +775,23 @@
     // Simple Mobile Menu Toggle
     document.getElementById('mobile-menu-btn').addEventListener('click', function () {
       document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Mobile Header Scroll Background
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.innerWidth < 1024) { // lg breakpoint
+        if (window.scrollY > 10) {
+          header.classList.add('bg-[#b1b1b1]', 'shadow-md');
+          header.classList.remove('bg-gradient-to-b', 'from-[#81888f]', 'to-transparent');
+        } else {
+          header.classList.remove('bg-[#b1b1b1]', 'shadow-md');
+          header.classList.add('bg-gradient-to-b', 'from-[#81888f]', 'to-transparent');
+        }
+      } else {
+        header.classList.remove('bg-[#b1b1b1]', 'shadow-md');
+        header.classList.add('bg-gradient-to-b', 'from-[#81888f]', 'to-transparent');
+      }
     });
   </script>
 </body>
